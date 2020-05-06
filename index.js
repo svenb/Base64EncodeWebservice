@@ -4,10 +4,6 @@ const fs = require('fs');
 const https = require('https');
 
 
-//const tmpfolder = "tmp\\";
-
-
-
 const server = http.createServer((request, response) => {
 
     const queryObject = url.parse(request.url,true).query;
@@ -45,7 +41,7 @@ var download = function(url, dest, cb) {
             file.close();
                 fs.readFile(finaldest,(err,data) => {
                     if(err) {
-                       throw err 
+                       throw err; 
                     }
                     else {
                         base64 = data.toString('base64');
