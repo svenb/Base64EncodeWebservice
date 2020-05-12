@@ -13,7 +13,7 @@ const server = http.createServer((request, response) => {
     if(queryObject.filelink != undefined) {  
 
         let RndId = getRndInteger(0,500);        
-        download(queryObject.filelink,'test.jpg',function(base64) {
+        download(queryObject.filelink,RndId+'.jpg',function(base64) {
             response.end(JSON.stringify({filelink: queryObject.filelink,base64code:base64 }));  
         });   
         
